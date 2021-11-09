@@ -25,31 +25,23 @@
 # limitations under the License.
 #
 
-# Release name
-PRODUCT_RELEASE_NAME := rmx2040
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery
+    android.hardware.fastboot@1.0-impl-mock
+
+# Release name
+PRODUCT_RELEASE_NAME := RMX2040
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := RMX2040
 PRODUCT_NAME := omni_RMX2040
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := Realme 6i
+PRODUCT_MODEL := RMX2040
 PRODUCT_MANUFACTURER := realme
-
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31
