@@ -15,6 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_RMX2040.mk
+    $(LOCAL_DIR)/twrp_RMX2040.mk
 
 COMMON_LUNCH_CHOICES := omni_RMX2040-eng
