@@ -90,7 +90,6 @@ BOARD_MAIN_PARTITION_LIST := vendor system
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Android Verified Boot
- AVB
 BOARD_AVB_ENABLE := true
 BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
